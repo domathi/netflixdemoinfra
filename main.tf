@@ -8,10 +8,10 @@ variable "instance_names" {
 
 resource "aws_instance" "one" {
   count                  = length(var.instance_names) # Automatically match number of names
-  ami                    = "ami-0120bca902526ae75"
+  ami                    = "ami-0144277607031eca2"
   instance_type          = "t2.medium"
-  key_name               = "mykp1"
-  vpc_security_group_ids = ["sg-08f7a885e7ba26d67"]
+  key_name               = "mykp"
+  vpc_security_group_ids = ["sg-0a01e6088b1d5fa76"]
 
   tags = {
     Name = var.instance_names[count.index]
